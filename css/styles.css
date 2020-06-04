@@ -1,3 +1,7 @@
-#over18, #under16, #16to18 {
+#over18, #under16, #from16to18 {
+  display: none;
+} 
+
+#from16to18 {
   display: none;
 } 

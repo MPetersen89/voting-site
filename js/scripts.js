@@ -1,11 +1,20 @@
 $(document).ready(function() {
-  const age = parseInt(prompt("How old are you?"));
-
-  if (age >= 18) {
-    $('#over18').show();
-  } else if (age >= 16 && age < 18) {
-    $('#16to18').show();
-  } else (age < 16) {
-    $('#under16').show();
-  }
+  
+  $("#ageVerification").submit(function() {
+    const age = parseInt($("#age").val());
+    event.preventDefault()
+    if (age >= 18) {
+      $('#over18').show();
+      $('#under16').hide();
+      $('#from16to18').hide();
+    } else if (age >= 16 && age <= 17) {
+      $('#from16to18').show();
+      $('#over18').hide();
+      $('#under16').hide();
+    } else if (age < 16) {
+      $('#from16to18').hide();
+      $('#over18').hide();
+      $('#under16').show();
+    }
+  });
 });
